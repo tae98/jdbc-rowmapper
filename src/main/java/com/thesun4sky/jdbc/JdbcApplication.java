@@ -15,8 +15,13 @@ public class JdbcApplication {
 		// 테이블 생성
 		repository.createTable();
 		// 유저정보 추가
-		repository.insertUser("Teasun Kim");
+		for(int i = 1; i <10 ;i++){
+			repository.insertUser("Teasun Kim");
+		}
+
 		// 유저정보 조회
-		System.out.println("User Name: " + repository.findUserNameById(1L));
+		for (int i = 1; i < 10; i++) {
+			System.out.println("User: " + repository.findUserById((long) i));
+		}
 	}
 }
